@@ -1,0 +1,22 @@
+---
+title: "markdown-citybike"
+---
+
+```{r setup, include=FALSE}
+#Importamos la data 
+
+library(readr)
+
+imdb <- read_csv("imdb.csv")
+View(imdb)
+
+```
+
+```{r}
+#Seleccionamos los 1000 primeros registros
+
+muestra <-head(imdb, 1000)
+muestra
+
+```
+
