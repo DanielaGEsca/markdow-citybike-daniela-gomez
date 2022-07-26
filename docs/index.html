@@ -265,25 +265,43 @@ $(document).ready(function () {
 </div>
 
 
+<pre class="r"><code>#Importamos la data 
+
+#install.packages(&quot;readr&quot;)
+library(readr)
+
+imdb &lt;- read_csv(&quot;citibike-tripdata.csv&quot;)</code></pre>
+<pre><code>## Rows: 97290 Columns: 13
+## -- Column specification --------------------------------------------------------
+## Delimiter: &quot;,&quot;
+## chr  (7): ride_id, rideable_type, start_station_name, start_station_id, end_...
+## dbl  (4): start_lat, start_lng, end_lat, end_lng
+## dttm (2): started_at, ended_at
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>View(imdb)</code></pre>
 <pre class="r"><code>#Seleccionamos los 1000 primeros registros
 
 muestra &lt;-head(imdb, 1000)
 muestra</code></pre>
-<pre><code>## # A tibble: 1,000 x 16
-##     ...1   budget company    country director genre  gross name  rating released
-##    &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;   
-##  1     0  8000000 Columbia ~ USA     Rob Rei~ Adve~ 5.23e7 Stan~ R      1986-08~
-##  2     1  6000000 Paramount~ USA     John Hu~ Come~ 7.01e7 Ferr~ PG-13  1986-06~
-##  3     2 15000000 Paramount~ USA     Tony Sc~ Acti~ 1.80e8 Top ~ PG     1986-05~
-##  4     3 18500000 Twentieth~ USA     James C~ Acti~ 8.52e7 Alie~ R      1986-07~
-##  5     4  9000000 Walt Disn~ USA     Randal ~ Adve~ 1.86e7 Flig~ PG     1986-08~
-##  6     5  6000000 Hemdale    UK      Oliver ~ Drama 1.39e8 Plat~ R      1987-02~
-##  7     6 25000000 Henson As~ UK      Jim Hen~ Adve~ 1.27e7 Laby~ PG     1986-06~
-##  8     7  6000000 De Lauren~ USA     David L~ Drama 8.55e6 Blue~ R      1986-10~
-##  9     8  9000000 Paramount~ USA     Howard ~ Come~ 4.05e7 Pret~ PG-13  1986-02~
-## 10     9 15000000 SLM Produ~ USA     David C~ Drama 4.05e7 The ~ R      1986-08~
-## # ... with 990 more rows, and 6 more variables: runtime &lt;dbl&gt;, score &lt;dbl&gt;,
-## #   star &lt;chr&gt;, votes &lt;dbl&gt;, writer &lt;chr&gt;, year &lt;dbl&gt;</code></pre>
+<pre><code>## # A tibble: 1,000 x 13
+##    ride_id          rideable_type started_at          ended_at           
+##    &lt;chr&gt;            &lt;chr&gt;         &lt;dttm&gt;              &lt;dttm&gt;             
+##  1 228F2E2FEBFBF843 classic_bike  2021-09-11 16:03:10 2021-09-11 16:20:57
+##  2 DCDBDC0A5178BAB5 classic_bike  2021-09-14 17:27:50 2021-09-14 17:34:18
+##  3 DD7AD7B81588187B docked_bike   2021-09-04 20:29:34 2021-09-04 20:41:17
+##  4 4D3CFEEB6E3E514B classic_bike  2021-09-16 17:26:37 2021-09-16 17:32:48
+##  5 D05FC6DDE1112F08 classic_bike  2021-09-16 18:05:35 2021-09-16 18:16:02
+##  6 8769F362BE51A110 classic_bike  2021-09-13 08:15:09 2021-09-13 08:25:07
+##  7 55E3308E4A04F30A classic_bike  2021-09-19 13:38:13 2021-09-19 13:43:03
+##  8 A6804335147F2379 classic_bike  2021-09-25 18:40:52 2021-09-25 18:45:23
+##  9 8E22087D9E5ABC3E classic_bike  2021-09-25 16:09:26 2021-09-25 16:15:01
+## 10 228BF949DD76A3A5 classic_bike  2021-09-25 20:33:38 2021-09-25 20:40:55
+## # ... with 990 more rows, and 9 more variables: start_station_name &lt;chr&gt;,
+## #   start_station_id &lt;chr&gt;, end_station_name &lt;chr&gt;, end_station_id &lt;chr&gt;,
+## #   start_lat &lt;dbl&gt;, start_lng &lt;dbl&gt;, end_lat &lt;dbl&gt;, end_lng &lt;dbl&gt;,
+## #   member_casual &lt;chr&gt;</code></pre>
 
 
 

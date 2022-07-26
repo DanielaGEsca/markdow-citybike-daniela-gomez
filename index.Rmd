@@ -2,12 +2,14 @@
 title: "markdown-citybike"
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=TRUE}
+
 #Importamos la data 
 
+#install.packages("readr")
 library(readr)
 
-imdb <- read_csv("imdb.csv")
+imdb <- read_csv("citibike-tripdata.csv")
 View(imdb)
 
 ```
