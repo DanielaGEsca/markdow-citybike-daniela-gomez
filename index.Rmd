@@ -9,7 +9,7 @@ title: "markdown-citybike"
 #install.packages("readr")
 library(readr)
 
-imdb <- read_csv("citibike-tripdata.csv")
+imdb <- read_csv("https://firebasestorage.googleapis.com/v0/b/citybike-daniela-gomez.appspot.com/o/citibike-tripdata.csv?alt=media&token=2ed96ae7-1d51-462b-b361-1c4cebd270bf")
 View(imdb)
 
 ```
